@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/form.css' %}" />
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+<div>
+    {%csrf_token%}
+
+    <div class="card-body">
+        <h1>Nezrena Project</h1>
+        <p>Тут будет почтовый агент</p>
+    </div>
+</div>
+
+</div>
+
+
+{% endblock %}
