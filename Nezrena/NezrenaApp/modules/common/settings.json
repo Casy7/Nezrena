@@ -1,0 +1,7 @@
+{
+      "paths": {
+            "mails_folder_path": "Z:/Progs/Nezrena/Nezrena/NezrenaApp/mails/in",
+            "text_analyzer_path": "Z:/Progs/Nezrena/Nezrena/NezrenaApp/analyzer",
+            "text_parser_path": "Z:/Progs/Nezrena/Nezrena/NezrenaApp/parser"
+      }
+}

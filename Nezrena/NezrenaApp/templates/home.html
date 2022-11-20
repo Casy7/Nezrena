@@ -9,6 +9,18 @@
     <div class="card-body">
         <h1>Nezrena Project</h1>
         <p>Тут будет почтовый агент</p>
+      
+        //{% for mail in mails %}
+
+        <div class="mail">
+            <object type="text/html" width="800px" height="600px" style="overflow:auto;">
+                {{ mail|safe }} 
+            </object>
+           
+        </div>        
+        
+        //{% endfor %}
+
     </div>
 </div>
 

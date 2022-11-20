@@ -138,3 +138,20 @@ p.right {
     color: orange;
 }
 
+label, p, h1 {
+    color: white;
+}
+
+.long-input {
+	width: 800px;
+	max-width: 800px;
+    max-width: 70rem !important;
+}
+
+.btn {
+    max-width: 200px;
+}
+
+hr {
+    color:#333333;
+}

@@ -4,3 +4,13 @@ h1 {
 p {
     color: white;
 }
+
+.mail {
+    max-height: 400px;
+    color: white;
+    overflow-y: scroll;
+}
+
+.mail > p {
+    color: white;
+}

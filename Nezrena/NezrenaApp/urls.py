@@ -27,6 +27,8 @@ from .views import *
 
 urlpatterns = [
     path("", HomePage.as_view(), name="home"),
+    path("settings/", SettingsPage.as_view(), name="settings"),
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

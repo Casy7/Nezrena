@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/form.css' %}" />
+<link rel="stylesheet" href="{% static 'css/settings.css' %}" />
+<div>
+    
+
+    <div class="card-body">
+        <h1>Настройки</h1>
+        <p>Пути почтового агента</p>
+      <form method="post">
+		{%csrf_token%}
+		<label for="mails_path_settings"></label>
+
+		<label for="basic-url">Путь к письмам</label>
+		<div class="input-group mb-3">
+		  <div class="input-group-prepend">
+			<span class="input-group-text" id="basic-addon3">✉</span>
+		  </div>
+		  <input type="text" class="form-control long-input" name="mails_folder_path" value="{{ settings.paths.mails_folder_path }}">
+		</div>
+		<hr>
+		<label for="basic-url">Путь к парсеру</label>
+		<div class="input-group mb-3">
+		  <div class="input-group-prepend">
+			<span class="input-group-text" id="basic-addon3">�</span>
+		  </div>
+		  <input type="text" class="form-control long-input" name="text_parser_path" value="{{ settings.paths.text_parser_path }}">
+		</div>
+		<hr>
+
+		<label for="basic-url">Путь к анализатору</label>
+		<div class="input-group mb-3">
+		  <div class="input-group-prepend">
+			<span class="input-group-text" id="basic-addon3">﷽</span>
+		  </div>
+		  <input type="text" class="form-control long-input" name="text_analyzer_path" value="{{ settings.paths.text_analyzer_path }}">
+		</div>
+		<hr>
+
+
+		<input type="submit"  class="btn btn-primary" value="Отправить">
+	  </form>
+
+    </div>
+</div>
+
+</div>
+
+
+{% endblock %}

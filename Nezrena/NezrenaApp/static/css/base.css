@@ -25,6 +25,10 @@ input[type="text"] {
     max-width: 30rem;
 }
 
+p, label {
+    color: white;
+}
+
 /* 
 .form-control {
     max-width: 40em;
