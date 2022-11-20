@@ -8,6 +8,7 @@ from django import forms
 from json import loads
 from .models import *
 from datetime import date, timedelta, datetime
+from NezrenaProject.settings import BASE_DIR
 
 
 
@@ -31,9 +32,9 @@ class HomePage(View):
         context = base_context(request, title='Home')
 
         context["mails"] = []
-        for mail in os.listdir("Z:/Progs/Nezrena/Nezrena/NezrenaApp/modules/node_modules/MailModule/mail/in"):
+        for mail in os.listdir(os.path.join(BASE_DIR, 'NezrenaApp/modules/node_modules/MailModule/mail/in')):
             mail_content = ""
-            with open("Z:/Progs/Nezrena/Nezrena/NezrenaApp/modules/node_modules/MailModule/mail/in/"+mail+"/mail.json", "r", encoding="UTF8") as mail:
+            with open(os.path.join(BASE_DIR, "NezrenaApp/modules/node_modules/MailModule/mail/in/")+mail+"/mail.json", "r", encoding="UTF8") as mail:
                 mail_content = mail.read()
             try:
                 json_content = json.loads(mail_content)['messageHtml']
@@ -48,7 +49,7 @@ class SettingsPage(View):
     def get(self, request):
         context = base_context(request, title='Home')
         settings_txt = ""
-        with open("./NezrenaApp/modules/common/settings.json", "r", encoding="UTF8") as mail:
+        with open(os.path.join(BASE_DIR, "NezrenaApp/modules/common/settings.json"), "r", encoding="UTF8") as mail:
                 settings_txt = mail.read()
 
         context["settings"] = json.loads(settings_txt)
@@ -62,7 +63,7 @@ class SettingsPage(View):
         text_analyzer_path = form_data['text_analyzer_path']
         text_parser_path = form_data['text_parser_path']
         settings_txt = ""
-        with open("./NezrenaApp/modules/common/settings.json", "r", encoding="UTF8") as mail:
+        with open(os.path.join(BASE_DIR, "NezrenaApp/modules/common/settings.json"), "r", encoding="UTF8") as mail:
                 settings_txt = mail.read()
 
         context["settings"] = json.loads(settings_txt)
@@ -75,6 +76,6 @@ class SettingsPage(View):
             }
         }
         
-        json.dump(settings_json, open("./NezrenaApp/modules/common/settings.json", "w"), indent = 6)
+        json.dump(settings_json, open(os.path.join(BASE_DIR, "NezrenaApp/modules/common/settings.json"), "w"), indent = 6)
 
         return HttpResponseRedirect('./')
