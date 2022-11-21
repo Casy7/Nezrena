@@ -1,5 +1,5 @@
 from ..common.functions import SingletonMeta
-import os
+from os.path import basename, join
 import subprocess
 
 class IMAPSubscription(metaclass=SingletonMeta):
@@ -11,7 +11,7 @@ class IMAPSubscription(metaclass=SingletonMeta):
     def IMAP_subscription(self):
         if not self.success:
             self.success = True
-            p = subprocess.Popen(('python', 'Z:/Progs/Nezrena/Nezrena/NezrenaApp/modules/imap_modules/subscribe.py'))
+            p = subprocess.Popen(('node', join(basename(__file__), '../mail_module')))
 
             print("Subscription is issued")
             
