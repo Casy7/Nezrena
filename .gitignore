@@ -2,8 +2,15 @@
 config.json
 
 # mail files
-**/mail/in/
+**/mail/
 
+# Cache
+__pycache__/
+.vscode/
+node_modules/
+
+# Package lock
+package-lock.json
 
 # Logs
 logs
