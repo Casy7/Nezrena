@@ -1,6 +1,6 @@
 
 class Attach():
-	def __init__(selfб ) -> None:
+	def __init__(self) -> None:
 		  pass
 
 
