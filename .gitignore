@@ -7,7 +7,7 @@ config.json
 # Cache
 __pycache__/
 .vscode/
-node_modules/
+**/mail_module/node_modules
 
 # Package lock
 package-lock.json

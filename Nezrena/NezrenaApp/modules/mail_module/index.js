@@ -107,7 +107,7 @@ else {
                                 message: parsed.text
                             }, null, 4);
 
-                            fs.writeFileSync(homepath(`mail/in/${uid}/mail.json`, mail));
+                            fs.writeFileSync(homepath(`mail/in/${uid}/mail.json`), mail);
 
                             for (let att of parsed.attachments)
                                 fs.writeFile(homepath("mail/in/" + uid + "/" + att.filename), att.content, () => { });

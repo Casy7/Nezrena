@@ -32,9 +32,9 @@ class HomePage(View):
         context = base_context(request, title='Home')
 
         context["mails"] = []
-        for mail in os.listdir(os.path.join(BASE_DIR, 'NezrenaApp/modules/node_modules/MailModule/mail/in')):
+        for mail in os.listdir(os.path.join(BASE_DIR, 'NezrenaApp/modules/mail_module/mail/in')):
             mail_content = ""
-            with open(os.path.join(BASE_DIR, "NezrenaApp/modules/node_modules/MailModule/mail/in/")+mail+"/mail.json", "r", encoding="UTF8") as mail:
+            with open(os.path.join(BASE_DIR, "NezrenaApp/modules/mail_module/mail/in/")+mail+"/mail.json", "r", encoding="UTF8") as mail:
                 mail_content = mail.read()
             try:
                 json_content = json.loads(mail_content)['messageHtml']
