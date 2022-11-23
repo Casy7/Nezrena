@@ -39,7 +39,7 @@ npm i
 
 ### 6. Настройте `config.json`
 
-Создайте файл `config.json` в папке `NezrenaApp\modules\mail_module\config.json`.
+Создайте файл `config.json` в папке `NezrenaApp\modules\mail_module`.
 
 Если вы член организации ОУН или ОНУ, этот файл у вас уже должен быть. Скопируйте его туда.
 
