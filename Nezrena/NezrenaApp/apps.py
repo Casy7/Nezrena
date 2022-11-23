@@ -9,7 +9,4 @@ class NezrenaappConfig(AppConfig):
     def ready(self):
         s1 = IMAPSubscription()
 
-        # print("READY")
-
-
         notification_flag = True
