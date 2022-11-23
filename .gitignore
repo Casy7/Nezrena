@@ -2,7 +2,7 @@
 config.json
 
 # mail files
-**/mail/
+**/mail/in/*
 
 # Cache
 __pycache__/
