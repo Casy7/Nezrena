@@ -89,6 +89,14 @@ else {
                     console.log(uid + " Flags: " + attrs.flags.join(","))
                 });
 
+                try {
+                    fs.mkdirSync(homepath(`mail`));
+                } catch (error) { }
+
+                try {
+                    fs.mkdirSync(homepath(`mail/in`));
+                } catch (error) { }
+
                 msg.once('end', function () {
                     console.log(uid + ' Finished')
                     parser.then(parsed => {
